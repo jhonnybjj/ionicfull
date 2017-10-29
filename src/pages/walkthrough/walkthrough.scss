@@ -18,12 +18,30 @@ walkthrough-page {
 		{
 			background-color: color($colors, walkthrough, base);
 			color: color($colors, walkthrough, contrast);
+
+
 		}
 
 		ion-slide:nth-child(even)
 		{
 			background-color: color($colors, walkthrough-alt, base);
 			color: color($colors, walkthrough-alt, contrast);
+		}
+
+		.slide-1{
+			background-image: url('/assets/images/rolagem/inicio01.jpg');
+		}
+		.slide-2{
+			background-image: url('/assets/images/rolagem/inicio02.jpg');
+		}
+		.slide-3{
+			background-image: url('/assets/images/rolagem/inicio03.jpg');
+		}
+		.slide-4{
+			background-image: url('/assets/images/rolagem/inicio04.jpg');
+		}
+		.slide-5{
+			background-image: url('/assets/images/rolagem/inicio05.jpg');
 		}
 
 		.swiper-pagination-bullet
@@ -63,7 +81,7 @@ walkthrough-page {
 			.intro-text
 			{
 				margin: 0px 20%;
-				font-size: 1.4rem;
+				font-size: 1.6rem;
 				line-height: 1.35;
 				text-align: center;
 				color: $white;
@@ -86,6 +104,7 @@ walkthrough-page {
 				{
 					@include segment-text-styles(color($colors, button-alt, base));
 					background-color: color($colors, button-alt, contrast);
+
 					margin: 0px;
 					border-radius: 0px;
 					@include flex(1);
