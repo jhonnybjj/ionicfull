@@ -32,8 +32,8 @@ export class SignupPage {
 
     this.signup = new FormGroup({
       email: new FormControl('', Validators.required),
-      password: new FormControl('test', Validators.required),
-      confirm_password: new FormControl('test', Validators.required)
+      password: new FormControl('senha', Validators.required),
+      confirm_password: new FormControl('senha', Validators.required)
     });
   }
 
