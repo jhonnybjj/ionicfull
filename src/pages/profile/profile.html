@@ -6,33 +6,107 @@
 
 <ion-content class="profile-content">
   <div class="user-details">
-    <ion-row class="user-main-data-row">
-      <ion-col no-padding width-33>
-        <preload-image class="user-image" [ratio]="{w:1, h:1}" [(src)]="profile.user.image" alt="profile.user.name" title="profile.user.name"></preload-image>
+    <ion-row class="usuario-linha-master">
+      <ion-col no-padding width-25>
+        <ion-row>
+          <preload-image class="user-image" [ratio]="{w:1, h:1}" [(src)]="profile.user.image" alt="profile.user.name" title="profile.user.name" (click)="goToSettings()"></preload-image>
+        </ion-row>
+        <ion-row class="usuario-esporte">
+          <h2 class="usuario-esporte-titulo">ESPORTE</h2>
+        </ion-row>
       </ion-col>
+
       <ion-col no-padding>
-        <ion-row class="social-presence-row">
-          <ion-col width-50 class="social-presence-item">
+        <ion-row class="perfil-topo">
+          <ion-col width-25 class="perfil-topo-linha">
             <a (click)="goToFollowersList()">
-              <h2 class="social-presence-value">{{profile.followers.length}}</h2>
-              <h4 class="social-presence-title">{{'FOLLOWERS' | translate }}</h4>
+              <ion-row class="perfil-topo-linha-contorno">
+                <h2 class="perfil-topo-titulo-faixa">ROXA</h2>
+              </ion-row>
+            </a>
+            <h2 class="perfil-topo-subtitulo">Graduação</h2>
+          </ion-col>
+
+          <ion-col width-25 class="perfil-topo-linha">
+            <a (click)="goToFollowersList()">
+              <ion-row class="perfil-topo-linha-contorno">
+                <h2 class="perfil-topo-titulo-tempo">8 ANOS</h2>
+              </ion-row>
+            </a>
+            <h2 class="perfil-topo-subtitulo-tempo">Praticando</h2>
+          </ion-col>
+
+          <ion-col width-25 class="perfil-topo-linha">
+            <a (click)="goToFollowersList()">
+              <ion-row class="perfil-topo-linha-contorno">
+                <h2 class="perfil-topo-titulo-seguidor">1000 +</h2>
+              </ion-row>
+            </a>
+            <h2 class="perfil-topo-subtitulo">Seguidores</h2>
+          </ion-col>
+
+          <ion-col width-25 class="perfil-topo-linha">
+            <a (click)="goToFollowersList()">
+              <ion-row class="perfil-topo-linha-contorno">
+                <h2 class="perfil-topo-titulo-equipe">Zé BJJ</h2>
+              </ion-row>
+            </a>
+            <h2 class="perfil-topo-subtitulo">Equipe</h2>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="perfil-meio">
+
+          <ion-col width-50 class="perfil-meio-coluna">
+            <a (click)="goToFollowersList()">
+              <ion-row class="perfil-meio-linha-contorno-medalha">
+                <ion-col width-33 center class="">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                </ion-col>
+                <ion-col width-33 center class="">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/prata.png" alt="app logo" title="ion2FullApp"></preload-image>
+                </ion-col>
+                <ion-col width-33 center class="">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/bronze.png" alt="app logo" title="ion2FullApp"></preload-image>
+                </ion-col>
+              </ion-row>
             </a>
           </ion-col>
-          <ion-col width-50 class="social-presence-item">
-            <a (click)="goToFollowingList()">
-              <h2 class="social-presence-value">{{profile.following.length}}</h2>
-              <h4 class="social-presence-title">{{'FOLLOWING' | translate }}</h4>
+
+          <ion-col width-50 class="perfil-meio-coluna">
+            <a (click)="goToFollowersList()">
+              <ion-row class="perfil-meio-linha-contorno-medalha">
+                <h2 class="perfil-meio-titulo-campeao">CAMPEÃO BRASILEIRO</h2>
+              </ion-row>
             </a>
           </ion-col>
         </ion-row>
-        <ion-row class="profile-action-row">
-          <ion-col no-padding>
-            <button ion-button block small (click)="goToSettings()">
-              {{'EDIT_PROFILE' | translate}}
-            </button>
+
+        <ion-row class="perfil-baixo">
+          <ion-col class="perfil-baixo-coluna">
+            <a (click)="goToFollowersList()">
+              <ion-row class="perfil-baixo-linha-contorno-patrocinador">
+                <ion-col width-20 center class="">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                </ion-col>
+                <ion-col width-20 center class="">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                </ion-col>
+                <ion-col width-20 center class="">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                </ion-col>
+                <ion-col width-20 center class="">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                </ion-col>
+                <ion-col width-20 center class="">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                </ion-col>
+              </ion-row>
+            </a>
           </ion-col>
         </ion-row>
       </ion-col>
+
     </ion-row>
     <ion-row wrap class="user-bio-row">
       <ion-col no-padding width-50>
@@ -47,6 +121,7 @@
         </p>
       </ion-col>
     </ion-row>
+
     <ion-segment class="user-content-segment" [(ngModel)]="display" (ionChange)="onSegmentChanged($event)">
       <ion-segment-button value="grid" (ionSelect)="onSegmentSelected($event)">
         {{'GRID' | translate}}

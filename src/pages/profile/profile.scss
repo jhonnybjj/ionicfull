@@ -9,7 +9,7 @@ profile-page {
 			padding-bottom: 4%;
 			background-color: $white;
 
-			.user-main-data-row
+			.usuario-linha-master
 			{
 				padding: 4% 4% 0px;
 				@include align-items(center);
@@ -18,58 +18,128 @@ profile-page {
 				{
 					border-radius: 50%;
 				}
-
-				.social-presence-row
-				{
-					padding: 0px 0px 5px 10px;
-				}
-
-				.profile-action-row
-				{
-					padding: 5px 0px 0px 10px;
-
-					.button
-					{
-						margin: 0px;
-						border-radius: 6px;
-						background-color: color($colors, button-alt, base);
-						color: color($colors, button-alt, contrast);
-						font-weight: 500;
-					}
-				}
-
-				.social-presence-item
-				{
+				.usuario-esporte{
 					text-align: center;
-					padding: 0px 5px;
+					padding: 5px;
+					border-radius: 8px;
+					border: 1px solid #c0c0c1;
+					margin: 1px;
+					min-height: 26px;
 
-					&:first-child
-					{
-						padding-left: 10%;
-					}
-					&:last-child
-					{
-						padding-right: 10%;
-					}
-
-					a {
-						display: block;
-						color: $white-d;
-					}
-
-					.social-presence-value
-					{
+					.usuario-esporte-titulo{
 						margin: 0px;
-						font-size: 2.2rem;
-					}
-
-					.social-presence-title
-					{
-						margin: 0px;
-						font-size: 1.2rem;
 						font-weight: 400;
 						line-height: 1.1;
-						letter-spacing: 0.2px;
+						letter-spacing: -0.8px;
+						vertical-align: middle;
+						font-size: 14px;
+					}
+				}
+
+				.perfil-topo
+				{
+					padding: 0px 0px 0px 5px;
+
+					.perfil-topo-linha{
+
+						.perfil-topo-linha-contorno{
+							text-align: center;
+							padding: 5px;
+							border-radius: 8px;
+							border: 1px solid #c0c0c1;
+							margin: 1px;
+							min-height: 26px;
+
+							.perfil-topo-titulo{
+								margin: 0px;
+								font-weight: 400;
+								line-height: 1.1;
+								letter-spacing: -0.8px;
+								vertical-align: middle;
+							}
+							.perfil-topo-titulo-faixa{
+								@extend .perfil-topo-titulo;
+								font-size: 14px;
+								color: #000000;
+							}
+							.perfil-topo-titulo-tempo{
+								@extend .perfil-topo-titulo;
+								font-size: 12px;
+								color: #000000;
+							}
+							.perfil-topo-titulo-seguidor{
+								@extend .perfil-topo-titulo;
+								font-size: 14px;
+								color: #000000;
+							}
+							.perfil-topo-titulo-equipe{
+								@extend .perfil-topo-titulo;
+								font-size: 14px;
+								color: #000000;
+							}
+						}
+
+						a {
+							display: block;
+							color: $white-d;
+						}
+
+						.perfil-topo-subtitulo
+						{
+							margin: 0px;
+							font-size: 10px;
+							text-align: center;
+						}
+						.perfil-topo-subtitulo-tempo{
+							@extend .perfil-topo-subtitulo;
+							font-size: 10px;
+						}
+
+
+
+					}
+				}
+
+				.perfil-meio{
+					padding: 0px 0px 0px 5px;
+
+					.perfil-meio-coluna{
+
+						.perfil-meio-linha-contorno-medalha{
+							text-align: center;
+							padding: 1px;
+							border-radius: 8px;
+							border: 1px solid #c0c0c1;
+							margin: 0px;
+							min-height: 40px;
+
+							.perfil-meio-titulo-campeao{
+								margin: 0px;
+								font-weight: 400;
+								line-height: 1.1;
+								letter-spacing: -0.8px;
+								vertical-align: middle;
+								font-size: 14px;
+								color: #000000;
+							}
+						}
+
+					}
+				}
+
+				.perfil-baixo{
+					padding: 0px 0px 0px 5px;
+
+					.perfil-baixo-coluna{
+
+						.perfil-baixo-linha-contorno-patrocinador{
+							text-align: center;
+							padding: 1px;
+							border-radius: 8px;
+							border: 1px solid #c0c0c1;
+							margin: 1px;
+						}
+
 					}
 				}
 			}
