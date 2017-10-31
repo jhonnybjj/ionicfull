@@ -1,4 +1,5 @@
 profile-page {
+	$azulpadrao:#4cb8f0;
 	.profile-content
 	{
 		background-color: color($colors, background, base);
@@ -22,9 +23,10 @@ profile-page {
 					text-align: center;
 					padding: 5px;
 					border-radius: 8px;
-					border: 1px solid #c0c0c1;
+					border: 1px solid $theme-color-1;
 					margin: 1px;
 					min-height: 26px;
+					background-color: $theme-color-1;
 
 					.usuario-esporte-titulo{
 						margin: 0px;
@@ -33,6 +35,7 @@ profile-page {
 						letter-spacing: -0.8px;
 						vertical-align: middle;
 						font-size: 14px;
+						color: $white;
 					}
 				}
 
@@ -52,30 +55,34 @@ profile-page {
 
 							.perfil-topo-titulo{
 								margin: 0px;
-								font-weight: 400;
+								font-weight: 500;
 								line-height: 1.1;
 								letter-spacing: -0.8px;
 								vertical-align: middle;
+								color: $black;
 							}
-							.perfil-topo-titulo-faixa{
-								@extend .perfil-topo-titulo;
-								font-size: 14px;
-								color: #000000;
-							}
+
 							.perfil-topo-titulo-tempo{
 								@extend .perfil-topo-titulo;
 								font-size: 12px;
-								color: #000000;
 							}
 							.perfil-topo-titulo-seguidor{
 								@extend .perfil-topo-titulo;
 								font-size: 14px;
-								color: #000000;
 							}
 							.perfil-topo-titulo-equipe{
 								@extend .perfil-topo-titulo;
 								font-size: 14px;
-								color: #000000;
+							}
+						}
+						.perfil-topo-linha-contorno-faixa{
+							@extend .perfil-topo-linha-contorno;
+							background-color: #720193;
+
+							.perfil-topo-titulo-faixa{
+								@extend .perfil-topo-titulo;
+								font-size: 14px;
+								color: $white;
 							}
 						}
 
@@ -89,6 +96,7 @@ profile-page {
 							margin: 0px;
 							font-size: 10px;
 							text-align: center;
+							font-weight: 500;
 						}
 						.perfil-topo-subtitulo-tempo{
 							@extend .perfil-topo-subtitulo;
@@ -109,9 +117,10 @@ profile-page {
 							text-align: center;
 							padding: 1px;
 							border-radius: 8px;
-							border: 1px solid #c0c0c1;
+							border: 1px solid $theme-color-1;
 							margin: 0px;
 							min-height: 40px;
+							background-color: $theme-color-1;
 
 							.perfil-meio-titulo-campeao{
 								margin: 0px;
@@ -120,7 +129,8 @@ profile-page {
 								letter-spacing: -0.8px;
 								vertical-align: middle;
 								font-size: 14px;
-								color: #000000;
+								color: $white;
+								font-weight: 500;
 							}
 						}
 
@@ -136,8 +146,10 @@ profile-page {
 							text-align: center;
 							padding: 1px;
 							border-radius: 8px;
-							border: 1px solid #c0c0c1;
+							border: 1px solid $theme-color-1;
 							margin: 1px;
+							background-color: $theme-color-1;
+
 						}
 
 					}

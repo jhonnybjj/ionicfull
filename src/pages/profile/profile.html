@@ -20,7 +20,7 @@
         <ion-row class="perfil-topo">
           <ion-col width-25 class="perfil-topo-linha">
             <a (click)="vaiGraduacao()">
-              <ion-row class="perfil-topo-linha-contorno">
+              <ion-row class="perfil-topo-linha-contorno-faixa">
                 <h2 class="perfil-topo-titulo-faixa">ROXA</h2>
               </ion-row>
             </a>
@@ -74,9 +74,11 @@
           </ion-col>
 
           <ion-col width-50 class="perfil-meio-coluna">
-            <ion-row class="perfil-meio-linha-contorno-medalha">
-              <h2 class="perfil-meio-titulo-campeao">CAMPEÃO BRASILEIRO</h2>
-            </ion-row>
+            <a (click)="vaiMedalha()">
+              <ion-row class="perfil-meio-linha-contorno-medalha">
+                <h2 class="perfil-meio-titulo-campeao">CAMPEÃO BRASILEIRO</h2>
+              </ion-row>
+            </a>
           </ion-col>
         </ion-row>
 
@@ -84,20 +86,20 @@
           <ion-col class="perfil-baixo-coluna">
             <a (click)="vaiPatrocinador()">
               <ion-row class="perfil-baixo-linha-contorno-patrocinador">
-                <ion-col width-20 center class="">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                <ion-col width-20 center class="perfil-baixo-imagem">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/patrocinador.png" alt="app logo" title="ion2FullApp"></preload-image>
                 </ion-col>
-                <ion-col width-20 center class="">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                <ion-col width-20 center class="perfil-baixo-imagem">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/patrocinador.png" alt="app logo" title="ion2FullApp"></preload-image>
                 </ion-col>
-                <ion-col width-20 center class="">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                <ion-col width-20 center class="perfil-baixo-imagem">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/patrocinador.png" alt="app logo" title="ion2FullApp"></preload-image>
                 </ion-col>
-                <ion-col width-20 center class="">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                <ion-col width-20 center class="perfil-baixo-imagem">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/patrocinador.png" alt="app logo" title="ion2FullApp"></preload-image>
                 </ion-col>
-                <ion-col width-20 center class="">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+                <ion-col width-20 center class="perfil-baixo-imagem">
+                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/patrocinador.png" alt="app logo" title="ion2FullApp"></preload-image>
                 </ion-col>
               </ion-row>
             </a>
