@@ -8,6 +8,13 @@ import { Http } from '@angular/http';
 import { ListingPage } from '../pages/listing/listing';
 import { FeedPage } from '../pages/feed/feed';
 import { FollowersPage } from '../pages/followers/followers';
+
+import { PagGraduacao } from '../pages/graduacao/graduacao';
+import { PagPratica } from '../pages/pratica/pratica';
+import { PagEquipe } from '../pages/equipe/equipe';
+import { PagMedalha } from '../pages/medalha/medalha';
+import { PagPatrocinador } from '../pages/patrocinador/patrocinador';
+
 import { LayoutsPage } from '../pages/layouts/layouts';
 import { FormsPage } from '../pages/forms/forms';
 import { LoginPage } from '../pages/login/login';
@@ -94,6 +101,11 @@ export function createTranslateLoader(http: Http) {
     ListingPage,
     FeedPage,
     FollowersPage,
+	  PagGraduacao,
+    PagPratica,
+    PagEquipe,
+    PagMedalha,
+    PagPatrocinador,
     LayoutsPage,
     FormsPage,
     LoginPage,
@@ -156,6 +168,11 @@ export function createTranslateLoader(http: Http) {
     ListingPage,
     FeedPage,
     FollowersPage,
+	  PagGraduacao,
+    PagPratica,
+    PagEquipe,
+    PagMedalha,
+    PagPatrocinador,
     LayoutsPage,
     FormsPage,
     LoginPage,

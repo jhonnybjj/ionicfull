@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { MenuController, SegmentButton, App, NavParams, LoadingController } from 'ionic-angular';
 import { FollowersPage } from '../followers/followers';
+import { PagGraduacao } from '../graduacao/graduacao';
+import { PagPratica } from '../pratica/pratica';
+import { PagEquipe } from '../equipe/equipe';
+import { PagMedalha } from '../medalha/medalha';
+import { PagPatrocinador } from '../patrocinador/patrocinador';
 import { SettingsPage } from '../settings/settings';
 import { ProfileModel } from './profile.model';
 import { ProfileService } from './profile.service';
@@ -47,6 +52,45 @@ export class ProfilePage {
     this.menu.close();
     this.app.getRootNav().push(FollowersPage, {
       list: this.profile.followers
+    });
+  }
+
+  vaiGraduacao() {
+    // close the menu when clicking a link from the menu
+    this.menu.close();
+    this.app.getRootNav().push(PagGraduacao, {
+
+    });
+  }
+
+  vaiPratica() {
+    // close the menu when clicking a link from the menu
+    this.menu.close();
+    this.app.getRootNav().push(PagPratica, {
+
+    });
+  }
+
+  vaiEquipe() {
+    // close the menu when clicking a link from the menu
+    this.menu.close();
+    this.app.getRootNav().push(PagEquipe, {
+
+    });
+  }
+  vaiMedalha() {
+    // close the menu when clicking a link from the menu
+    this.menu.close();
+    this.app.getRootNav().push(PagMedalha, {
+
+    });
+  }
+
+  vaiPatrocinador() {
+    // close the menu when clicking a link from the menu
+    this.menu.close();
+    this.app.getRootNav().push(PagPatrocinador, {
+
     });
   }
 

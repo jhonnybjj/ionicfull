@@ -19,7 +19,7 @@
       <ion-col no-padding>
         <ion-row class="perfil-topo">
           <ion-col width-25 class="perfil-topo-linha">
-            <a (click)="goToFollowersList()">
+            <a (click)="vaiGraduacao()">
               <ion-row class="perfil-topo-linha-contorno">
                 <h2 class="perfil-topo-titulo-faixa">ROXA</h2>
               </ion-row>
@@ -28,7 +28,7 @@
           </ion-col>
 
           <ion-col width-25 class="perfil-topo-linha">
-            <a (click)="goToFollowersList()">
+            <a (click)="vaiPratica()">
               <ion-row class="perfil-topo-linha-contorno">
                 <h2 class="perfil-topo-titulo-tempo">8 ANOS</h2>
               </ion-row>
@@ -46,7 +46,7 @@
           </ion-col>
 
           <ion-col width-25 class="perfil-topo-linha">
-            <a (click)="goToFollowersList()">
+            <a (click)="vaiEquipe()">
               <ion-row class="perfil-topo-linha-contorno">
                 <h2 class="perfil-topo-titulo-equipe">Zé BJJ</h2>
               </ion-row>
@@ -58,7 +58,7 @@
         <ion-row class="perfil-meio">
 
           <ion-col width-50 class="perfil-meio-coluna">
-            <a (click)="goToFollowersList()">
+            <a (click)="vaiMedalha()">
               <ion-row class="perfil-meio-linha-contorno-medalha">
                 <ion-col width-33 center class="">
                   <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
@@ -74,17 +74,15 @@
           </ion-col>
 
           <ion-col width-50 class="perfil-meio-coluna">
-            <a (click)="goToFollowersList()">
-              <ion-row class="perfil-meio-linha-contorno-medalha">
-                <h2 class="perfil-meio-titulo-campeao">CAMPEÃO BRASILEIRO</h2>
-              </ion-row>
-            </a>
+            <ion-row class="perfil-meio-linha-contorno-medalha">
+              <h2 class="perfil-meio-titulo-campeao">CAMPEÃO BRASILEIRO</h2>
+            </ion-row>
           </ion-col>
         </ion-row>
 
         <ion-row class="perfil-baixo">
           <ion-col class="perfil-baixo-coluna">
-            <a (click)="goToFollowersList()">
+            <a (click)="vaiPatrocinador()">
               <ion-row class="perfil-baixo-linha-contorno-patrocinador">
                 <ion-col width-20 center class="">
                   <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
