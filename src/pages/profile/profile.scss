@@ -1,157 +1,83 @@
 profile-page {
 	$azulpadrao:#4cb8f0;
-	.profile-content
-	{
+	.profile-content{
 		background-color: color($colors, background, base);
 
-		.user-details
-		{
+		.user-details{
 			@include element-shadow();
 			padding-bottom: 4%;
 			background-color: $white;
 
-			.usuario-linha-master
-			{
-				padding: 4% 4% 0px;
+			.usuario-topo{
+				padding: 0% 0% 0px;
 				@include align-items(center);
 
-				.user-image
-				{
-					border-radius: 50%;
-				}
-				.usuario-esporte{
-					text-align: center;
-					padding: 5px;
-					border-radius: 8px;
-					border: 1px solid $theme-color-1;
-					margin: 1px;
-					min-height: 26px;
-					background-color: $theme-color-1;
+				.topo-bg{
+					background-color: $black;
 
-					.usuario-esporte-titulo{
-						margin: 0px;
-						font-weight: 400;
-						line-height: 1.1;
-						letter-spacing: -0.8px;
-						vertical-align: middle;
-						font-size: 14px;
+					.titulo-cidade{
 						color: $white;
+						text-align: center;
+						padding-top: 0px;
+
+						h6{
+							font-size: 12px;
+							font-style: oblique;
+						}
 					}
-				}
 
-				.perfil-topo
-				{
-					padding: 0px 0px 0px 5px;
+					.foto-01{
+						padding: 10px 5px 0px 5px;
 
-					.perfil-topo-linha{
 
-						.perfil-topo-linha-contorno{
-							text-align: center;
-							padding: 5px;
-							border-radius: 8px;
-							border: 1px solid #c0c0c1;
-							margin: 1px;
-							min-height: 26px;
+						.foto-usuario{
+							border: 5px solid $white;
+							border-radius: 50%;
+						}
 
-							.perfil-topo-titulo{
-								margin: 0px;
-								font-weight: 500;
-								line-height: 1.1;
-								letter-spacing: -0.8px;
-								vertical-align: middle;
-								color: $black;
-							}
+					}
 
-							.perfil-topo-titulo-tempo{
-								@extend .perfil-topo-titulo;
+					.topo-botao{
+						padding-top: 10px;
+
+						.botao-1{
+							padding: 0px 10px 5px 0px;
+							.button{
 								font-size: 12px;
 							}
-							.perfil-topo-titulo-seguidor{
-								@extend .perfil-topo-titulo;
-								font-size: 14px;
-							}
-							.perfil-topo-titulo-equipe{
-								@extend .perfil-topo-titulo;
-								font-size: 14px;
-							}
 						}
-						.perfil-topo-linha-contorno-faixa{
-							@extend .perfil-topo-linha-contorno;
-							background-color: #720193;
-
-							.perfil-topo-titulo-faixa{
-								@extend .perfil-topo-titulo;
-								font-size: 14px;
-								color: $white;
-							}
-						}
-
-						a {
-							display: block;
-							color: $white-d;
-						}
-
-						.perfil-topo-subtitulo
-						{
-							margin: 0px;
-							font-size: 10px;
-							text-align: center;
-							font-weight: 500;
-						}
-						.perfil-topo-subtitulo-tempo{
-							@extend .perfil-topo-subtitulo;
-							font-size: 10px;
-						}
-
-
-
 					}
-				}
 
-				.perfil-meio{
-					padding: 0px 0px 0px 5px;
+					.usuario-nome{
+						text-align: center;
+						color: $white;
+						padding: 0px;
 
-					.perfil-meio-coluna{
+						.nome{
+							font-size: 20px;
+							font-style: oblique;
 
-						.perfil-meio-linha-contorno-medalha{
-							text-align: center;
-							padding: 1px;
-							border-radius: 8px;
-							border: 1px solid $theme-color-1;
-							margin: 0px;
-							min-height: 40px;
-							background-color: $theme-color-1;
+						}
+					}
+					.usuario-op{
+						text-align: center;
+						color: $white;
 
-							.perfil-meio-titulo-campeao{
-								margin: 0px;
-								font-weight: 400;
-								line-height: 1.1;
-								letter-spacing: -0.8px;
-								vertical-align: middle;
-								font-size: 14px;
-								color: $white;
-								font-weight: 500;
+						.op-borda{
+							font-size: 18px;
+							color: $white;
+						}
+
+						.opcao{
+							.subtitulo{
+								font-size: 11px;
+								line-height: 3px;
+							}
+							.titulo{
+								font-size: 16px;
+								line-height: 3px;
 							}
 						}
-
-					}
-				}
-
-				.perfil-baixo{
-					padding: 0px 0px 0px 5px;
-
-					.perfil-baixo-coluna{
-
-						.perfil-baixo-linha-contorno-patrocinador{
-							text-align: center;
-							padding: 1px;
-							border-radius: 8px;
-							border: 1px solid $theme-color-1;
-							margin: 1px;
-							background-color: $theme-color-1;
-
-						}
-
 					}
 				}
 			}

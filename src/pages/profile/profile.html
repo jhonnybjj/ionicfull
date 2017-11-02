@@ -6,108 +6,57 @@
 
 <ion-content class="profile-content">
   <div class="user-details">
-    <ion-row class="usuario-linha-master">
-      <ion-col no-padding width-25>
-        <ion-row>
-          <preload-image class="user-image" [ratio]="{w:1, h:1}" [(src)]="profile.user.image" alt="profile.user.name" title="profile.user.name" (click)="goToSettings()"></preload-image>
-        </ion-row>
-        <ion-row class="usuario-esporte">
-          <h2 class="usuario-esporte-titulo">ESPORTE</h2>
-        </ion-row>
-      </ion-col>
-
-      <ion-col no-padding>
-        <ion-row class="perfil-topo">
-          <ion-col width-25 class="perfil-topo-linha">
-            <a (click)="vaiGraduacao()">
-              <ion-row class="perfil-topo-linha-contorno-faixa">
-                <h2 class="perfil-topo-titulo-faixa">ROXA</h2>
-              </ion-row>
-            </a>
-            <h2 class="perfil-topo-subtitulo">Graduação</h2>
-          </ion-col>
-
-          <ion-col width-25 class="perfil-topo-linha">
-            <a (click)="vaiPratica()">
-              <ion-row class="perfil-topo-linha-contorno">
-                <h2 class="perfil-topo-titulo-tempo">8 ANOS</h2>
-              </ion-row>
-            </a>
-            <h2 class="perfil-topo-subtitulo-tempo">Praticando</h2>
-          </ion-col>
-
-          <ion-col width-25 class="perfil-topo-linha">
-            <a (click)="goToFollowersList()">
-              <ion-row class="perfil-topo-linha-contorno">
-                <h2 class="perfil-topo-titulo-seguidor">1000 +</h2>
-              </ion-row>
-            </a>
-            <h2 class="perfil-topo-subtitulo">Seguidores</h2>
-          </ion-col>
-
-          <ion-col width-25 class="perfil-topo-linha">
-            <a (click)="vaiEquipe()">
-              <ion-row class="perfil-topo-linha-contorno">
-                <h2 class="perfil-topo-titulo-equipe">Zé BJJ</h2>
-              </ion-row>
-            </a>
-            <h2 class="perfil-topo-subtitulo">Equipe</h2>
-          </ion-col>
-        </ion-row>
-
-        <ion-row class="perfil-meio">
-
-          <ion-col width-50 class="perfil-meio-coluna">
-            <a (click)="vaiMedalha()">
-              <ion-row class="perfil-meio-linha-contorno-medalha">
-                <ion-col width-33 center class="">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/ouro.png" alt="app logo" title="ion2FullApp"></preload-image>
+    <ion-row class="usuario-topo">
+        <ion-col no-padding class="topo-bg">
+            <ion-row>
+                <ion-col width-25 class="titulo-cidade">
+                  <h6>São Paulo<br />BRA</h6>
                 </ion-col>
-                <ion-col width-33 center class="">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/prata.png" alt="app logo" title="ion2FullApp"></preload-image>
+                <ion-col width-50>
+                  <ion-row class="foto-01">
+                    <preload-image class="foto-usuario" [ratio]="{w:1, h:1}" [(src)]="profile.user.image" alt="profile.user.name" title="profile.user.name" (click)="goToSettings()"></preload-image>
+                  </ion-row>
                 </ion-col>
-                <ion-col width-33 center class="">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/bronze.png" alt="app logo" title="ion2FullApp"></preload-image>
+                <ion-col width-25 class="topo-botao">
+                  <ion-row class="botao-1">
+                    <button ion-button block small (click)="goToSettings()">
+                        Seguir
+                    </button>
+                  </ion-row>
+                  <ion-row class="botao-1">
+                    <button ion-button block small (click)="goToSettings()">
+                        Doar
+                    </button>
+                  </ion-row>
                 </ion-col>
-              </ion-row>
-            </a>
-          </ion-col>
+            </ion-row>
 
-          <ion-col width-50 class="perfil-meio-coluna">
-            <a (click)="vaiMedalha()">
-              <ion-row class="perfil-meio-linha-contorno-medalha">
-                <h2 class="perfil-meio-titulo-campeao">CAMPEÃO BRASILEIRO</h2>
-              </ion-row>
-            </a>
-          </ion-col>
-        </ion-row>
-
-        <ion-row class="perfil-baixo">
-          <ion-col class="perfil-baixo-coluna">
-            <a (click)="vaiPatrocinador()">
-              <ion-row class="perfil-baixo-linha-contorno-patrocinador">
-                <ion-col width-20 center class="perfil-baixo-imagem">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/patrocinador.png" alt="app logo" title="ion2FullApp"></preload-image>
+            <ion-row>
+              <ion-col class="usuario-nome">
+                <span class="nome">Igor Meireles Vieira, 24</span>
+              </ion-col>
+            </ion-row>
+            <ion-row class="usuario-op">
+                <ion-col width-10></ion-col>
+                <ion-col width-25 class="opcao">
+                  <p class="subtitulo">esporte</p>
+                  <p class="titulo">JIU JITSU</p>
                 </ion-col>
-                <ion-col width-20 center class="perfil-baixo-imagem">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/patrocinador.png" alt="app logo" title="ion2FullApp"></preload-image>
+                <ion-col width-1 class="op-borda">/</ion-col>
+                <ion-col width-25 class="opcao">
+                  <p class="subtitulo">tempo treino</p>
+                  <p class="titulo">8 ANOS</p>
                 </ion-col>
-                <ion-col width-20 center class="perfil-baixo-imagem">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/patrocinador.png" alt="app logo" title="ion2FullApp"></preload-image>
+                <ion-col width-1 class="op-borda">/</ion-col>
+                <ion-col width-25 class="opcao">
+                  <p class="subtitulo">seguidores</p>
+                  <p class="titulo">100K</p>
                 </ion-col>
-                <ion-col width-20 center class="perfil-baixo-imagem">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/patrocinador.png" alt="app logo" title="ion2FullApp"></preload-image>
-                </ion-col>
-                <ion-col width-20 center class="perfil-baixo-imagem">
-                  <preload-image [ratio]="{w:1, h:1}" src="./assets/images/profile/patrocinador.png" alt="app logo" title="ion2FullApp"></preload-image>
-                </ion-col>
-              </ion-row>
-            </a>
-          </ion-col>
-        </ion-row>
-      </ion-col>
-
+                <ion-col width-10></ion-col>
+            </ion-row>
+        </ion-col>
     </ion-row>
+
     <ion-row wrap class="user-bio-row">
       <ion-col no-padding width-50>
         <h2 class="user-name">{{profile.user.name}}</h2>
