@@ -14,6 +14,7 @@ profile-page {
 
 				.topo-bg{
 					background-color: $black;
+					background-image: url(/assets/images/bgprofile.jpg);
 
 					.titulo-cidade{
 						color: $white;
@@ -23,6 +24,7 @@ profile-page {
 						h6{
 							font-size: 12px;
 							font-style: oblique;
+							text-shadow: 1px 1px 1px #000000;
 						}
 					}
 
@@ -56,6 +58,7 @@ profile-page {
 						.nome{
 							font-size: 20px;
 							font-style: oblique;
+							text-shadow: 1px 1px 1px #000000;
 
 						}
 					}
@@ -72,39 +75,86 @@ profile-page {
 							.subtitulo{
 								font-size: 11px;
 								line-height: 3px;
+								text-shadow: 1px 1px 1px #000000;
 							}
 							.titulo{
 								font-size: 16px;
-								line-height: 3px;
+								font-weight: bold;
+								text-shadow: 1px 1px 1px #000000;
+								margin-top: 0px;
+							}
+							.tituloBarra{
+								font-size: 16px;
+								text-shadow: 1px 1px 1px #000000;
+								margin-top: 0px;
 							}
 						}
 					}
+					.medalha{
+						margin-top: -20px;
+						max-height: 30px;
+
+						.medalha-titulo{
+	                        text-align: center;
+	                        background-color: #dadada;
+							border-radius: 5px 0px 0px 0px;
+
+	                        .medalha-titulo{
+	                            font-size: 12px;
+								color: #868686;
+								margin-top: 5px;
+	                        }
+	                    }
+						.medalha-ouro{
+							background-color: #f7a401;
+							color: $white;
+							font-size: 20px;
+							text-align: center;
+							line-height: 3px;
+							p{
+								margin-top: 10px;
+							}
+						}
+						.medalha-prata{
+							background-color: #777e80;
+							color: $white;
+							font-size: 20px;
+							text-align: center;
+							line-height: 3px;
+							p{
+								margin-top: 10px;
+							}
+						}
+						.medalha-bronze{
+							background-color: #b77a49;
+							color: $white;
+							font-size: 20px;
+							text-align: center;
+							line-height: 3px;
+							p{
+								margin-top: 10px;
+							}
+						}
+						.medalha-total{
+							border-radius: 0px 5px 0px 0px;
+							background-color: #dfe2db;
+							color: #353f64;
+							font-size: 20px;
+							text-align: center;
+							line-height: 3px;
+							p{
+								margin-top: 10px;
+							}
+						}
+
+					}
+
 				}
 			}
 
 			.user-bio-row
 			{
 				padding: 4%;
-
-				.user-name
-				{
-					font-size: 1.6rem;
-					font-weight: 500;
-					letter-spacing: 0.2px;
-					color: $theme-color-1;
-					margin: 0px;
-				}
-
-				.user-location
-				{
-					font-size: 1.2rem;
-					font-weight: 500;
-					letter-spacing: 0.2px;
-					color: $white-d;
-					display: block;
-				  text-align: right;
-				  line-height: 1.6;
-				}
 
 				.user-description
 				{

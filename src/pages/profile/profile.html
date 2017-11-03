@@ -10,16 +10,18 @@
         <ion-col no-padding class="topo-bg">
             <ion-row>
                 <ion-col width-25 class="titulo-cidade">
-                  <h6>São Paulo<br />BRA</h6>
+                  <h6><ion-icon ios="ios-locate" md="md-locate"></ion-icon>São Paulo<br />BRA</h6>
                 </ion-col>
-                <ion-col width-50>
+                <ion-col width-5></ion-col>
+                <ion-col width-40>
                   <ion-row class="foto-01">
                     <preload-image class="foto-usuario" [ratio]="{w:1, h:1}" [(src)]="profile.user.image" alt="profile.user.name" title="profile.user.name" (click)="goToSettings()"></preload-image>
                   </ion-row>
                 </ion-col>
+                <ion-col width-5></ion-col>
                 <ion-col width-25 class="topo-botao">
                   <ion-row class="botao-1">
-                    <button ion-button block small (click)="goToSettings()">
+                    <button ion-button block small (click)="goToSettings()" color="secondary">
                         Seguir
                     </button>
                   </ion-row>
@@ -42,84 +44,52 @@
                   <p class="subtitulo">esporte</p>
                   <p class="titulo">JIU JITSU</p>
                 </ion-col>
-                <ion-col width-1 class="op-borda">/</ion-col>
+                <ion-col width-1 class="opcao">
+                    <p class="subtitulo">&nbsp;</p>
+                    <p class="tituloBarra">/</p>
+                </ion-col>
                 <ion-col width-25 class="opcao">
                   <p class="subtitulo">tempo treino</p>
                   <p class="titulo">8 ANOS</p>
                 </ion-col>
-                <ion-col width-1 class="op-borda">/</ion-col>
+                <ion-col width-1 class="opcao">
+                    <p class="subtitulo">&nbsp;</p>
+                    <p class="tituloBarra">/</p>
+                </ion-col>
                 <ion-col width-25 class="opcao">
                   <p class="subtitulo">seguidores</p>
                   <p class="titulo">100K</p>
                 </ion-col>
                 <ion-col width-10></ion-col>
             </ion-row>
+            <ion-row class="medalha">
+              <ion-col width-5></ion-col>
+              <ion-col width-50 class="medalha-titulo">
+                <p class="medalha-titulo">QUADRO DE MEDALHAS</p>
+              </ion-col>
+              <ion-col width-10 class="medalha-ouro">
+                  <p class="medalha-numero">00</p>
+              </ion-col>
+              <ion-col width-10 class="medalha-prata">
+                  <p class="medalha-numero">00</p>
+              </ion-col>
+              <ion-col width-10 class="medalha-bronze">
+                  <p class="medalha-numero">00</p>
+              </ion-col>
+              <ion-col width-10 class="medalha-total">
+                  <p class="medalha-numero">00</p>
+              </ion-col>
+              <ion-col width-5></ion-col>
+            </ion-row>
         </ion-col>
     </ion-row>
 
     <ion-row wrap class="user-bio-row">
-      <ion-col no-padding width-50>
-        <h2 class="user-name">{{profile.user.name}}</h2>
-      </ion-col>
-      <ion-col no-padding width-50>
-        <span class="user-location">{{profile.user.location}}</span>
-      </ion-col>
       <ion-col no-padding width-100>
         <p class="user-description">
           {{profile.user.about}}
         </p>
       </ion-col>
     </ion-row>
-
-    <ion-segment class="user-content-segment" [(ngModel)]="display" (ionChange)="onSegmentChanged($event)">
-      <ion-segment-button value="grid" (ionSelect)="onSegmentSelected($event)">
-        {{'GRID' | translate}}
-      </ion-segment-button>
-      <ion-segment-button value="list" (ionSelect)="onSegmentSelected($event)">
-        {{'LIST' | translate}}
-      </ion-segment-button>
-    </ion-segment>
-  </div>
-  <div [ngSwitch]="display" class="user-content">
-    <div *ngSwitchCase="'list'" class="list-view">
-      <div class="list-item" *ngFor="let post of profile.posts">
-        <span class="item-date">{{post.date}}</span>
-        <ion-card>
-          <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title=""></preload-image>
-          <ion-card-content>
-            <p class="item-text">
-              {{post.description}}
-            </p>
-          </ion-card-content>
-          <ion-row no-padding class="actions-row">
-            <ion-col no-padding width-30 text-left>
-              <button class="action-button" ion-button clear small color="danger" icon-left>
-                <ion-icon isActive="{{post.liked}}" name='heart'></ion-icon>
-                  {{post.likes}} {{'LIKES' | translate}}
-              </button>
-            </ion-col>
-            <ion-col no-padding width-45 text-center>
-              <button class="action-button" ion-button clear small color="danger" icon-left>
-                <ion-icon name='chatbubbles'></ion-icon>
-                  {{post.comments}} {{'COMMENTS' | translate}}
-              </button>
-            </ion-col>
-            <ion-col no-padding width-25 text-right>
-              <button class="action-button" ion-button clear small color="danger" icon-left (click)="sharePost(post)">
-                <ion-icon name='share-alt'></ion-icon>
-                {{'SHARE' | translate}}
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-card>
-      </div>
-    </div>
-    <div *ngSwitchCase="'grid'" class="grid-view">
-      <ion-row wrap class="grid-row">
-        <ion-col width-33 class="grid-item" *ngFor="let post of profile.posts">
-          <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title="ion2FullApp"></preload-image>
-        </ion-col>
-      </ion-row>
-    </div>
   </div>
 </ion-content>
