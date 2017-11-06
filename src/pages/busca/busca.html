@@ -8,3 +8,86 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
+
+<ion-content class="busca-content">
+  <ion-row>
+    <ion-col>
+      <h6>Localizar equipes, usuários e locais de treino</h6>
+
+      <ion-list class="form-busca">
+        <ion-item>
+          <ion-label floating>Busca</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <div padding>
+        <button ion-button color="primary" block>Localizar</button>
+      </div>
+
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="result-busca">
+    <ion-col class="busca-col">
+      <h6>Resultados da busca:</h6>
+      <ion-row class="busca-unit">
+        <ion-col width-20 class="busca-esq">
+          <preload-image [ratio]="{w:1, h:1}" src="./assets/images/logo_white_raise.png" alt="app logo" title="ion2FullApp"></preload-image>
+        </ion-col>
+        <ion-col width-55 class="busca-meio">
+          <ion-row class="meio-nome">
+            <ion-col width-15 class="nome-bandeira">
+              <preload-image [ratio]="{w:1, h:1}" src="./assets/images/logo_white_raise.png" alt="app logo" title="ion2FullApp"></preload-image>
+            </ion-col>
+            <ion-col width-75 class="nome-nome">
+              Equipe Igor Meir...
+            </ion-col>
+          </ion-row>
+          <ion-row class="meio-medalha">
+            <ion-col width-15 class="medalha-titulo">
+              <preload-image [ratio]="{w:1, h:1}" src="./assets/images/logo_white_raise.png" alt="app logo" title="ion2FullApp"></preload-image>
+            </ion-col>
+            <ion-col width-15 class="medalha-ouro">
+                <p class="medalha-numero">00</p>
+            </ion-col>
+            <ion-col width-15 class="medalha-prata">
+                <p class="medalha-numero">00</p>
+            </ion-col>
+            <ion-col width-15 class="medalha-bronze">
+                <p class="medalha-numero">00</p>
+            </ion-col>
+            <ion-col width-15 class="medalha-total">
+                <p class="medalha-numero">00</p>
+            </ion-col>
+            <ion-col width-25></ion-col>
+          </ion-row>
+          <ion-row class="meio-arroba">
+            @Igor_Meirelles
+          </ion-row>
+        </ion-col>
+        <ion-col width-25 class="busca-dir">
+          <ion-row>
+            <ion-col class="dir-integra">
+              <p class="integra-1"> Integrantes</p>
+              <p class="integra-2">000</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="dir-botao">
+              <button ion-button block small (click)="goToSettings()" color="secondary">
+                  Seguir
+              </button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="dir-local">
+              P. Grande - SP
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
