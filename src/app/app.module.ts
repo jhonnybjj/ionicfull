@@ -11,9 +11,11 @@ import { FollowersPage } from '../pages/followers/followers';
 
 import { PagGraduacao } from '../pages/graduacao/graduacao';
 import { PagPratica } from '../pages/pratica/pratica';
-import { PagEquipe } from '../pages/equipe/equipe';
+import { PagBusca } from '../pages/busca/busca';
 import { PagMedalha } from '../pages/medalha/medalha';
 import { PagPatrocinador } from '../pages/patrocinador/patrocinador';
+import { PagEquipe } from '../pages/equipe/equipe';
+import { PagPost } from '../pages/post/post';
 
 import { LayoutsPage } from '../pages/layouts/layouts';
 import { FormsPage } from '../pages/forms/forms';
@@ -103,9 +105,11 @@ export function createTranslateLoader(http: Http) {
     FollowersPage,
 	  PagGraduacao,
     PagPratica,
-    PagEquipe,
+    PagBusca,
     PagMedalha,
     PagPatrocinador,
+    PagEquipe,
+    PagPost,
     LayoutsPage,
     FormsPage,
     LoginPage,
@@ -170,9 +174,11 @@ export function createTranslateLoader(http: Http) {
     FollowersPage,
 	  PagGraduacao,
     PagPratica,
-    PagEquipe,
+    PagBusca,
     PagMedalha,
     PagPatrocinador,
+    PagEquipe,
+    PagPost,
     LayoutsPage,
     FormsPage,
     LoginPage,
