@@ -89,12 +89,160 @@
         </ion-col>
     </ion-row>
 
-    <ion-row wrap class="user-bio-row">
-      <ion-col no-padding width-100>
-        <p class="user-description">
-          {{profile.user.about}}
-        </p>
-      </ion-col>
-    </ion-row>
+
+<!-- TABS-->
+
+
+  <ion-segment class="forms-examples-segment" [(ngModel)]="section" (ionChange)="onSegmentChanged($event)">
+    <ion-segment-button value="tab1" (ionSelect)="onSegmentSelected($event)">
+      <ion-icon name="people"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="tab2" (ionSelect)="onSegmentSelected($event)">
+      <ion-icon name="timer"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="tab3" (ionSelect)="onSegmentSelected($event)">
+      <ion-icon name="calendar"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="tab4" (ionSelect)="onSegmentSelected($event)">
+      <ion-icon name="refresh-circle"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="tab5" (ionSelect)="onSegmentSelected($event)">
+      <ion-icon name="camera"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+
+
+  <div [ngSwitch]="section" class="forms-wrapper">
+
+    <div *ngSwitchCase="'tab1'" class="post-example-view">
+
+      <ion-row wrap class="user-bio-row">
+        <ion-col no-padding width-100>
+          <p class="user-description">
+            {{profile.user.about}}aaaaaa
+          </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-list class="schedule-list">
+        <ion-item class="schedule-item">
+        <ion-row>
+          <ion-col width-20 class="schedule-date">
+            <h2 class="schedule-day">12</h2>
+            <h3 class="schedule-month">DEZ</h3>
+            <h4 class="schedule-time">12:30</h4>
+          </ion-col>
+          <ion-col width-80 class="schedule-data" style="padding: 12px 14px!important;">
+            <div class="data-item">
+              <div class="item-content">
+                <h2 class="item-title one-line">Treino  iniciante</h2>
+                <div class="item-description">
+                  <ion-icon class="description-icon" name="clock"></ion-icon>
+                  <p class="description-text">22/12/119</p>
+                </div>
+                <div class="item-description">
+                  <ion-icon class="description-icon" name="navigate"></ion-icon>
+                  <p class="description-text one-line">brasil</p>
+                </div>
+              </div>
+              <ion-icon class="item-icon" name="arrow-forward"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      </ion-list>
+    </div>
+
+
+
+    <div *ngSwitchCase="'tab2'" class="event-example-view">
+      <form class="sample-form event-form" [formGroup]="event_form" (ngSubmit)="createEvent()">
+        <section class="form-section">
+          <h2 class="section-title">{{'ADD_AN_EVENT' | translate}}</h2>
+          <ion-item>
+            <ion-input type="text" placeholder="Event title" formControlName="title"></ion-input>
+          </ion-item>
+          <ion-item icon-right>
+            <ion-input type="text" placeholder="Location" formControlName="location"></ion-input>
+            <ion-icon name="navigate" item-right></ion-icon>
+          </ion-item>
+          <ion-row no-padding class="multi-input-row">
+            <ion-col no-padding width-60>
+              <ion-item class="multi-input time-item">
+                <ion-label floating>{{'FROM' | translate }}</ion-label>
+                <ion-datetime formControlName="from_date" displayFormat="DD/MM/YY" pickerFormat="DD-MM-YYYY"></ion-datetime>
+              </ion-item>
+            </ion-col>
+            <ion-col no-padding width-40>
+              <ion-item class="multi-input time-item">
+                <ion-datetime formControlName="from_time" displayFormat="h mm a" pickerFormat="h mm A"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding class="multi-input-row">
+            <ion-col no-padding width-60>
+              <ion-item class="multi-input time-item">
+                <ion-label floating>{{'TO' | translate}}</ion-label>
+                <ion-datetime formControlName="to_date" displayFormat="DD/MM/YY" pickerFormat="DD-MM-YYYY"></ion-datetime>
+              </ion-item>
+            </ion-col>
+            <ion-col no-padding width-40>
+              <ion-item class="multi-input time-item">
+                <ion-datetime formControlName="to_time" displayFormat="h mm a" pickerFormat="h mm A"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </section>
+        <section class="form-section">
+          <button ion-button block class="form-action-button create-event-button" type="submit" [disabled]="!event_form.valid">Done!</button>
+        </section>
+      </form>
+    </div>
+
+
+    <div *ngSwitchCase="'tab3'" class="card-example-view">
+      <form class="sample-form card-form" [formGroup]="card_form" (ngSubmit)="createCard()">
+        <section class="form-section">
+          <h2 class="section-title">{{'CREDICT_CARD_INFORMATION' | translate}}</h2>
+          <ion-item>
+            <ion-label floating>{{'CARD_NUMBER' | translate}}</ion-label>
+            <ion-input type="text" formControlName="card_number"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{'CARD_HOLDER' | translate}}</ion-label>
+            <ion-input type="text" formControlName="card_holder"></ion-input>
+          </ion-item>
+          <ion-row no-padding class="multi-input-row">
+            <ion-col no-padding width-50>
+              <ion-item class="multi-input">
+                <ion-label floating>CVC</ion-label>
+                <ion-input type="text" formControlName="cvc"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col no-padding width-50>
+              <ion-item class="multi-input time-item">
+                <ion-label floating>{{'EXP_DATE' | translate}}</ion-label>
+                <ion-datetime formControlName="exp_date" displayFormat="MM/YYYY" pickerFormat="MM-YYYY"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </section>
+        <ion-list class="card-preferences">
+          <ion-item class="switcher-item">
+            <ion-label>{{'SAVE_THIS_CARD' | translate}}</ion-label>
+            <ion-toggle formControlName="save_card"></ion-toggle>
+          </ion-item>
+        </ion-list>
+        <section class="form-section">
+          <button ion-button block class="form-action-button create-card-button" type="submit" [disabled]="!card_form.valid">Confirm</button>
+        </section>
+      </form>
+    </div>
+
+  </div>
+<!-- TABS-->
+
+
   </div>
 </ion-content>

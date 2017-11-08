@@ -70,9 +70,9 @@ schedule-page {
 
 				.schedule-data
 				{
-					border-radius: 6px;
+					border-radius: 6px; 
 					background-color: $white;
-					padding: 12px 14px;
+					padding: 12px 14px!important;
 					@include element-shadow();
 
 					.data-item
