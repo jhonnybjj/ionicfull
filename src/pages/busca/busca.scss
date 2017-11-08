@@ -17,7 +17,7 @@ busca-page {
 					border-bottom: 1px solid #000000;
 					.busca-esq{
 						padding: 0px;
-						padding-top: 15px;
+						padding-top: 10px;
 						preload-image{
 
 						}
@@ -28,12 +28,21 @@ busca-page {
 
 							}
 							.nome-nome{
-								font-size: 15px;
-								font-weight: bold;
+								.p-equipe{
+									font-size: 10px;
+									line-height: 0px;
+									margin-top: 3px;
+								}
+								.p-nome{
+									font-size: 16px;
+									font-weight: bold;
+									line-height: 0px;
+								}
 							}
 						}
 						.meio-medalha{
 							max-height: 25px;
+							margin-top: -9px;
 							.medalha-titulo{
 		                        text-align: center;
 		                        background-color: #dadada;
@@ -87,9 +96,8 @@ busca-page {
 								}
 							}
 						}
-						.meio-arroba{
-							padding-top: 10px;
-							font-size: 16px;
+						.meio-local{
+							font-size: 12px;
 						}
 					}
 					.busca-dir{
@@ -106,14 +114,35 @@ busca-page {
 						}
 						.dir-botao{
 							text-align: center;
-							margin-top: -20px;
+							margin-top: 0px;
 							button{
 								font-size: 10px;
 							}
 						}
-						.dir-local{
-							font-size: 10px;
-							margin-top: -5px;
+						.dir-equipe{
+							background-color: #000000;
+							max-height: 40px;
+							border-radius: 5px;
+							.p-equipe{
+								font-size: 10px;
+								line-height: 0px;
+								margin-top: 3px;
+								color: #FFFFFF;
+								text-align: center;
+							}
+							.p-nome{
+								font-size: 15px;
+								line-height: 3px;
+								color: #FFFFFF;
+								text-align: center;
+							}
+						}
+						.dir-inscrever{
+							text-align: center;
+							margin-top: 0px;
+							button{
+								font-size: 10px;
+							}
 						}
 					}
 				}

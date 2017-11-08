@@ -33,15 +33,13 @@
       <h6>Resultados da busca:</h6>
       <ion-row class="busca-unit">
         <ion-col width-20 class="busca-esq">
-          <preload-image [ratio]="{w:1, h:1}" src="./assets/images/logo_white_raise.png" alt="app logo" title="ion2FullApp"></preload-image>
+          <preload-image [ratio]="{w:1, h:1}" src="./assets/images/usuario.jpg" alt="app logo" title="ion2FullApp"></preload-image>
         </ion-col>
         <ion-col width-55 class="busca-meio">
           <ion-row class="meio-nome">
-            <ion-col width-15 class="nome-bandeira">
-              <preload-image [ratio]="{w:1, h:1}" src="./assets/images/logo_white_raise.png" alt="app logo" title="ion2FullApp"></preload-image>
-            </ion-col>
-            <ion-col width-75 class="nome-nome">
-              Equipe Igor Meir...
+            <ion-col class="nome-nome">
+              <p class="p-equipe">Equipe</p>
+              <p class="p-nome">Igor Meireles</p>
             </ion-col>
           </ion-row>
           <ion-row class="meio-medalha">
@@ -62,17 +60,13 @@
             </ion-col>
             <ion-col width-25></ion-col>
           </ion-row>
-          <ion-row class="meio-arroba">
-            @Igor_Meirelles
+          <ion-row class="meio-local">
+            <ion-col>
+              Praia Grande / SP
+            </ion-col>
           </ion-row>
         </ion-col>
         <ion-col width-25 class="busca-dir">
-          <ion-row>
-            <ion-col class="dir-integra">
-              <p class="integra-1"> Integrantes</p>
-              <p class="integra-2">000</p>
-            </ion-col>
-          </ion-row>
           <ion-row>
             <ion-col class="dir-botao">
               <button ion-button block small (click)="goToSettings()" color="secondary">
@@ -81,8 +75,62 @@
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col class="dir-local">
-              P. Grande - SP
+            <ion-col class="dir-inscrever">
+              <button ion-button block small (click)="goToSettings()" color="secondary">
+                  Inscrever
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="busca-unit">
+        <ion-col width-20 class="busca-esq">
+          <preload-image [ratio]="{w:1, h:1}" src="./assets/images/usuario.jpg" alt="app logo" title="ion2FullApp"></preload-image>
+        </ion-col>
+        <ion-col width-55 class="busca-meio">
+          <ion-row class="meio-nome">
+            <ion-col class="nome-nome">
+              <p class="p-equipe">Atleta, Coach e Nutricionista</p>
+              <p class="p-nome">Igor Meireles</p>
+            </ion-col>
+          </ion-row>
+          <ion-row class="meio-medalha">
+            <ion-col width-15 class="medalha-titulo">
+              <preload-image [ratio]="{w:1, h:1}" src="./assets/images/logo_white_raise.png" alt="app logo" title="ion2FullApp"></preload-image>
+            </ion-col>
+            <ion-col width-15 class="medalha-ouro">
+                <p class="medalha-numero">00</p>
+            </ion-col>
+            <ion-col width-15 class="medalha-prata">
+                <p class="medalha-numero">00</p>
+            </ion-col>
+            <ion-col width-15 class="medalha-bronze">
+                <p class="medalha-numero">00</p>
+            </ion-col>
+            <ion-col width-15 class="medalha-total">
+                <p class="medalha-numero">00</p>
+            </ion-col>
+            <ion-col width-25></ion-col>
+          </ion-row>
+          <ion-row class="meio-local">
+            <ion-col>
+              Praia Grande / SP
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col width-25 class="busca-dir">
+          <ion-row>
+            <ion-col class="dir-botao">
+              <button ion-button block small (click)="goToSettings()" color="secondary">
+                  Seguir
+              </button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="dir-equipe">
+              <p class="p-equipe">Equipe</p>
+              <p class="p-nome">CAVACA</p>
             </ion-col>
           </ion-row>
         </ion-col>
