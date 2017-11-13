@@ -1,103 +1,457 @@
-$followers-description-font-size: 12px;
+post-page {
+	ion-header {
+		@include header-styles(color($colors, header-alt, base), color($colors, header-alt, contrast));
+	}
 
-followers-page {
-	.followers-content
+	.forms-examples-content
 	{
 		background-color: color($colors, background, base);
 
-		ion-searchbar {
-			background: transparent;
-			padding: 10px;
-			border: none;
+		.forms-examples-segment
+		{
+			padding: 14px 0px;
+			background-color: $white;
+			@include element-shadow();
 
-			.searchbar-input
+			@include segment-button-styles($theme-color-2);
+
+			.segment-button
 			{
-				border-radius: 1.5rem;
-				color: $theme-color-2;
-				background-color: $white-c;
-			}
-
-			.searchbar-search-icon {
-			  @include ios-searchbar-icon($searchbar-ios-input-search-icon-svg, $theme-color-2);
+				@include segment-text-styles($white-d);
 			}
 		}
 
-		.followers-list
+		.sample-form
 		{
-			margin: 10px;
-
-			.list-item
+			.form-section
 			{
-				margin: 6px 0px;
-				border-radius: 6px;
-				border: none;
-				padding: 0px;
-				@include element-shadow();
+				padding: 0px 14px;
 
-				ion-thumbnail {
-					flex: 0 0 24%;
-			    max-width: 24%;
-					margin: 0px;
-					padding: 8px;
-				}
-
-				.item-inner
+				.item:first-child
 				{
-					border: none;
-					padding: 0px;
+					margin-top: 20px;
+				}
+			}
 
-					.input-wrapper
+			ion-item {
+				@include basic-input-style(color($colors, background, base), $theme-color-3, $white-d);
+
+				&.item
+				{
+					margin-top: 14px;
+
+					&.item-label-floating
 					{
-						padding: 8px;
+						margin-top: 0px;
+
+						ion-label {
+							color: $white-d;
+						}
 					}
 
-					ion-label {
-						margin: 0px;
-						@include align-self(flex-start);
+					.item-inner
+					{
+						ion-icon {
+							color: $theme-color-2;
+						}
+					}
+				}
 
-						.item-title
+				&:first-of-type {
+					margin-top: 0px;
+				}
+			}
+
+			.section-title
+			{
+				font-size: 16px;
+				line-height: 1.2;
+				letter-spacing: 1.1px;
+				text-align: center;
+				color: $theme-color-2;
+				font-weight: 400;
+				margin: 0px;
+			}
+
+			.form-action-button
+			{
+				margin: 0px;
+				margin-top: 20px;
+
+				@include call-to-action-button-styles(color($colors, button, base), color($colors, button, contrast));
+			}
+		}
+
+		.post-example-view
+		{
+			padding-bottom: 20px;
+
+			.post-form
+			{
+				.upload-image-button
+				{
+					border-radius: 6px;
+					background-color: $white;
+					color: $white-d;
+					height: initial;
+					margin: 30px 0px;
+					padding-top: 16px;
+					padding-bottom: 32px;
+					@include element-shadow();
+					contain: style layout;
+
+					.button-inner
+					{
+						@include flex-wrap(wrap);
+
+						ion-icon {
+							flex: 0 0 100%;
+					    max-width: 100%;
+							font-size: 3.8em;
+						}
+
+						.button-title
 						{
+							flex: 0 0 100%;
+					    max-width: 100%;
+							font-size: 1.4rem;
+							color: $white-d;
+							font-weight: 400;
+							margin: 0px;
+						}
+					}
+				}
+
+				.item.item-textarea
+				{
+					background-color: $white;
+					font-size: 1.4rem;
+
+					.item-inner
+					{
+						padding: 0px 14px;
+					}
+				}
+
+				.choose-category-button
+				{
+					border-radius: 6px;
+					background-color: $white;
+					color: $white-d;
+					margin: 30px 0px;
+					@include element-shadow();
+
+					.button-inner
+					{
+						@include justify-content(space-between);
+
+						ion-icon {
+							color: $theme-color-2;
+							font-size: 2.2em;
+						}
+					}
+				}
+
+				.section-title
+				{
+					margin-top: 40px;
+					margin-bottom: 30px;
+				}
+
+				@include range-item-styles($white-d, $black-d, $theme-color-1);
+
+				.range-item
+				{
+					padding: 15px 30px;
+					margin: 0px;
+					background-color: $white;
+
+					ion-label {
+						.range-value
+						{
+							color: $theme-color-1;
+						}
+					}
+				}
+
+				.time-item
+				{
+					padding: 0px 30px;
+					margin: 0px;
+					background-color: $white;
+					border: none !important;
+					@include element-shadow();
+
+					.item-inner
+					{
+						padding: 0px;
+						border: none;
+
+						ion-label {
+							margin: 15px 8px 15px 0px;
 							font-size: 1.4rem;
 							font-weight: 500;
 							letter-spacing: 0.2px;
-							color: $theme-color-3;
-							margin-bottom: 6px;
-						}
-
-						.item-description
-						{
-							letter-spacing: 0.2px;
-							word-break: break-word;
 							color: $white-d;
-							@include multi-line-ellipsis($followers-description-font-size);
 						}
-					}
 
-					.relation-button
-					{
-						margin: 0px;
-					  padding: 0px 16px;
-					  height: inherit;
-						@include align-self(stretch);
-					  border-radius: 0px 6px 6px 0px;
-						background-color: $theme-color-2;
-					  width: 24%;
+						ion-datetime {
+							padding-right: 0px;
 
-						&.following
-						{
-							background-color: $theme-color-1;
+							.datetime-text
+							{
+								font-size: 1.8rem;
+								color: $theme-color-1;
 
-							ion-icon {
-								font-size: 4.2em;
+								&::after
+								{
+									content: 'hrs';
+									margin-left: 4px;
+								}
+
+								&:empty::after
+								{
+									display: none;
+								}
 							}
-						}
-
-						ion-icon {
-							font-size: 2.4em;
-							color: $white;
 						}
 					}
 				}
+
+				@include counter-item-styles($white-d, $theme-color-1, $white);
+
+				.counter-item
+				{
+					margin: 0px;
+					background-color: $white;
+
+					.item-inner
+					{
+						.counter-label
+						{
+							margin-left: 30px;
+						}
+
+						counter-input {
+							padding-right: 30px;
+						}
+					}
+				}
+			}
+		}
+
+		.event-example-view
+		{
+			padding-bottom: 20px;
+
+			.event-form
+			{
+				.section-title
+				{
+					margin-top: 30px;
+
+					& + .item-input
+					{
+						margin-top: 20px;
+					}
+				}
+
+				.multi-input-row
+				{
+					@include align-items(flex-end);
+
+					ion-col {
+						padding: 0px 7px;
+
+						&:first-child{
+							padding-left: 0px;
+						}
+
+						&:last-child{
+							padding-right: 0px;
+						}
+					}
+
+					.multi-input
+					{
+						margin: 0px;
+
+						&.item-datetime.item-label-floating
+						{
+							ion-label {
+								margin-top: 7px;
+							}
+
+							ion-datetime {
+								padding-top: 0px;
+							}
+						}
+
+						ion-datetime {
+							padding-left: 0px;
+
+							.datetime-text
+							{
+								color: $theme-color-3;
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+		.card-example-view
+		{
+			padding-bottom: 20px;
+
+			.card-form
+			{
+				.section-title
+				{
+					margin-top: 30px;
+
+					& + .item-label-floating
+					{
+						margin-top: 10px;
+					}
+				}
+
+				.multi-input-row
+				{
+					ion-col {
+						padding: 0px 7px;
+
+						&:first-child{
+							padding-left: 0px;
+						}
+
+						&:last-child{
+							padding-right: 0px;
+						}
+					}
+
+					.multi-input
+					{
+						margin: 0px;
+					}
+				}
+
+				ion-datetime {
+					padding-left: 0px;
+					padding-top: 8px;
+					padding-bottom: 7px;
+
+					.datetime-text
+					{
+						color: $theme-color-3;
+					}
+				}
+
+				.card-preferences
+				{
+					margin: 40px 0px 50px;
+
+					@include switcher-item-styles($white-d, $theme-color-1);
+
+					.switcher-item
+					{
+						padding: 0px 14px;
+					  background: $white;
+
+						.item-inner
+						{
+							ion-label {
+								opacity: 1;
+							}
+
+							ion-toggle {
+								padding-right: 0px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+ion-alert.category-prompt {
+	.alert-wrapper
+	{
+		width: 80%;
+		background-color: $white;
+	}
+
+	.alert-head
+	{
+		padding-bottom: 20px;
+
+		.alert-title
+		{
+			font-size: 2.0rem;
+			line-height: 1.2;
+			letter-spacing: 1.1px;
+			color: $theme-color-2;
+			font-weight: 400;
+		}
+	}
+
+	.alert-message:empty
+	{
+		display: none;
+	}
+
+	.alert-checkbox-group
+	{
+		border: none;
+		padding: 0px 20px;
+
+		.alert-checkbox
+		{
+			margin: 14px 0px;
+
+			.alert-checkbox-label
+			{
+				border-radius: 6px;
+				font-size: 1.4rem;
+				font-weight: 500;
+				letter-spacing: 0.2px;
+				background-color: $white-a;
+				color: $white-d;
+				text-align: center;
+				@include element-shadow();
+			}
+
+			&[aria-checked=true] .alert-checkbox-label
+			{
+				background-color: $theme-color-1;
+				color: $white;
+			}
+
+			.alert-checkbox-icon
+			{
+				display: none;
+			}
+		}
+	}
+
+	.alert-button-group
+	{
+		padding: 14px 0px;
+
+		.alert-button
+		{
+			@include segment-text-styles($white-d);
+			border-top: none;
+		  border-right-color: rgba($white-d, 0.3);
+			font-weight: 400;
+
+			&:last-child
+			{
+			  font-weight: 500;
+				color: $theme-color-2;
 			}
 		}
 	}

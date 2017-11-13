@@ -9,20 +9,169 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="followers-content">
-  <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
+<ion-content class="forms-examples-content">
 
-  <ion-list class="followers-list">
-    <ion-item class="list-item" *ngFor="let item of list">
-      <ion-thumbnail item-left>
-        <preload-image [ratio]="{w:1, h:1}" [src]="item.image" alt="item.name" title="item.name"></preload-image>
-      </ion-thumbnail>
-      <h2 class="item-title">{{item.name}}</h2>
-      <p class="item-description" rows="2">{{item.about}}</p>
-      <button class="relation-button" [ngClass]="{following: !item.inverse_relation}" ion-button clear icon-only item-right>
-        <ion-icon *ngIf="item.inverse_relation" name="person-add"></ion-icon>
-        <ion-icon *ngIf="!item.inverse_relation" name="checkmark"></ion-icon>
-      </button>
-    </ion-item>
-  </ion-list>
+  <ion-segment class="forms-examples-segment" [(ngModel)]="section" (ionChange)="onSegmentChanged($event)">
+    <ion-segment-button value="post" (ionSelect)="onSegmentSelected($event)">
+      <ion-icon name="camera"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="atividade" (ionSelect)="onSegmentSelected($event)">
+      <ion-icon name="timer"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="agenda" (ionSelect)="onSegmentSelected($event)">
+      <ion-icon name="calendar"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="campanha" (ionSelect)="onSegmentSelected($event)">
+      <ion-icon name="refresh-circle"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="section" class="forms-wrapper">
+    <div *ngSwitchCase="'post'" class="post-example-view">
+      <form class="sample-form post-form" [formGroup]="post_form" (ngSubmit)="createPost()">
+        <section class="form-section">
+          <h2 class="section-title">No que você esta pensando agora?</h2>
+          <ion-item>
+            <ion-textarea rows="7" placeholder="Write a description or something..." formControlName="description"></ion-textarea>
+          </ion-item>
+        </section>
+        <section class="form-section">
+          <button *ngIf="!selected_image" ion-button block large class="upload-image-button" (click)="openImagePicker()">
+            <ion-icon name="camera"></ion-icon>
+            <h3 class="button-title">{{'UPLOAD_AN_IMAGE' | translate}}</h3>
+          </button>
+          <preload-image *ngIf="selected_image" [ratio]="{w:1, h:1}" [src]="selected_image" alt="this is the image" title="IMAGE!"></preload-image>
+          <ion-item>
+            <ion-input type="text" placeholder="Check-in" formControlName="title"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Marcar amigos" formControlName="title"></ion-input>
+          </ion-item>
+        </section>
+        <section class="form-section">
+          <button ion-button block class="form-action-button create-post-button" type="submit" [disabled]="!post_form.valid">Publicar!</button>
+        </section>
+      </form>
+    </div>
+
+    <div *ngSwitchCase="'atividade'" class="event-example-view">
+      <form class="sample-form event-form" [formGroup]="event_form" (ngSubmit)="createEvent()">
+        <section class="form-section">
+          <h2 class="section-title">Publicar atividade</h2>
+          <ion-item>
+            <ion-input type="text" placeholder="Event title" formControlName="title"></ion-input>
+          </ion-item>
+          <ion-item icon-right>
+            <ion-input type="text" placeholder="Location" formControlName="location"></ion-input>
+            <ion-icon name="navigate" item-right></ion-icon>
+          </ion-item>
+          <ion-row no-padding class="multi-input-row">
+            <ion-col no-padding width-60>
+              <ion-item class="multi-input time-item">
+                <ion-label floating>{{'FROM' | translate }}</ion-label>
+                <ion-datetime formControlName="from_date" displayFormat="DD/MM/YY" pickerFormat="DD-MM-YYYY"></ion-datetime>
+              </ion-item>
+            </ion-col>
+            <ion-col no-padding width-40>
+              <ion-item class="multi-input time-item">
+                <ion-datetime formControlName="from_time" displayFormat="h mm a" pickerFormat="h mm A"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row no-padding class="multi-input-row">
+            <ion-col no-padding width-60>
+              <ion-item class="multi-input time-item">
+                <ion-label floating>{{'TO' | translate}}</ion-label>
+                <ion-datetime formControlName="to_date" displayFormat="DD/MM/YY" pickerFormat="DD-MM-YYYY"></ion-datetime>
+              </ion-item>
+            </ion-col>
+            <ion-col no-padding width-40>
+              <ion-item class="multi-input time-item">
+                <ion-datetime formControlName="to_time" displayFormat="h mm a" pickerFormat="h mm A"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </section>
+        <section class="form-section">
+          <button ion-button block class="form-action-button create-event-button" type="submit" [disabled]="!event_form.valid">Done!</button>
+        </section>
+      </form>
+    </div>
+    <div *ngSwitchCase="'agenda'" class="card-example-view">
+      <form class="sample-form card-form" [formGroup]="card_form" (ngSubmit)="createCard()">
+        <section class="form-section">
+          <h2 class="section-title">Publicar agenda</h2>
+          <ion-item>
+            <ion-label floating>{{'CARD_NUMBER' | translate}}</ion-label>
+            <ion-input type="text" formControlName="card_number"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{'CARD_HOLDER' | translate}}</ion-label>
+            <ion-input type="text" formControlName="card_holder"></ion-input>
+          </ion-item>
+          <ion-row no-padding class="multi-input-row">
+            <ion-col no-padding width-50>
+              <ion-item class="multi-input">
+                <ion-label floating>CVC</ion-label>
+                <ion-input type="text" formControlName="cvc"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col no-padding width-50>
+              <ion-item class="multi-input time-item">
+                <ion-label floating>{{'EXP_DATE' | translate}}</ion-label>
+                <ion-datetime formControlName="exp_date" displayFormat="MM/YYYY" pickerFormat="MM-YYYY"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </section>
+        <ion-list class="card-preferences">
+          <ion-item class="switcher-item">
+            <ion-label>{{'SAVE_THIS_CARD' | translate}}</ion-label>
+            <ion-toggle formControlName="save_card"></ion-toggle>
+          </ion-item>
+        </ion-list>
+        <section class="form-section">
+          <button ion-button block class="form-action-button create-card-button" type="submit" [disabled]="!card_form.valid">Confirm</button>
+        </section>
+      </form>
+    </div>
+    <div *ngSwitchCase="'campanha'" class="card-example-view">
+      <form class="sample-form card-form" [formGroup]="card_form" (ngSubmit)="createCard()">
+        <section class="form-section">
+          <h2 class="section-title">Publicar campanha</h2>
+          <ion-item>
+            <ion-label floating>{{'CARD_NUMBER' | translate}}</ion-label>
+            <ion-input type="text" formControlName="card_number"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{'CARD_HOLDER' | translate}}</ion-label>
+            <ion-input type="text" formControlName="card_holder"></ion-input>
+          </ion-item>
+          <ion-row no-padding class="multi-input-row">
+            <ion-col no-padding width-50>
+              <ion-item class="multi-input">
+                <ion-label floating>CVC</ion-label>
+                <ion-input type="text" formControlName="cvc"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col no-padding width-50>
+              <ion-item class="multi-input time-item">
+                <ion-label floating>{{'EXP_DATE' | translate}}</ion-label>
+                <ion-datetime formControlName="exp_date" displayFormat="MM/YYYY" pickerFormat="MM-YYYY"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </section>
+        <ion-list class="card-preferences">
+          <ion-item class="switcher-item">
+            <ion-label>{{'SAVE_THIS_CARD' | translate}}</ion-label>
+            <ion-toggle formControlName="save_card"></ion-toggle>
+          </ion-item>
+        </ion-list>
+        <section class="form-section">
+          <button ion-button block class="form-action-button create-card-button" type="submit" [disabled]="!card_form.valid">Confirm</button>
+        </section>
+      </form>
+    </div>
+  </div>
 </ion-content>
